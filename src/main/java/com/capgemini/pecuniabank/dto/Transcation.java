@@ -1,0 +1,103 @@
+package com.capgemini.pecuniabank.dto;
+
+import java.time.LocalDate;
+import java.util.Date;
+
+public class Transcation {
+	String transId;
+	String trasAccountId;
+	String transType;
+	double transAmount;
+	String transOption;
+	LocalDate transDate;
+	String transChequeID;
+	String transFrom;
+	String transTo;
+	double transClosingBalance;
+
+	public Transcation(String transId, String trasAccountId, String transType, double transAmount, String transOption,
+			LocalDate transcationDate, String transChequeID, String transFrom, String transTo, double transClosingBalance) {
+		super();
+		this.transId = transId;
+		this.trasAccountId = trasAccountId;
+		this.transType = transType;
+		this.transAmount = transAmount;
+		this.transOption = transOption;
+		this.transDate = transcationDate;
+		this.transChequeID = transChequeID;
+		this.transFrom = transFrom;
+		this.transTo = transTo;
+		this.transClosingBalance = transClosingBalance;
+	}
+	/*
+	
+	public String getTransId() {
+		return transId;
+	}
+	public void setTransId(String transId) {
+		this.transId = transId;
+	}
+	public String getTrasAccountId() {
+		return trasAccountId;
+	}
+	public void setTrasAccountId(String trasAccountId) {
+		this.trasAccountId = trasAccountId;
+	}
+	public String getTransType() {
+		return transType;
+	}
+	public void setTransType(String transType) {
+		this.transType = transType;
+	}
+	public double getTransAmount() {
+		return transAmount;
+	}
+	public void setTransAmount(double transAmount) {
+		this.transAmount = transAmount;
+	}
+	public String getTransOption() {
+		return transOption;
+	}
+	public void setTransOption(String transOption) {
+		this.transOption = transOption;
+	}
+	public LocalDate getTransDate() {
+		return transDate;
+	}
+	public void setTransDate(LocalDate transDate) {
+		this.transDate = transDate;
+	}
+	public String getTransChequeID() {
+		return transChequeID;
+	}
+	public void setTransChequeID(String transChequeID) {
+		this.transChequeID = transChequeID;
+	}
+	public String getTransFrom() {
+		return transFrom;
+	}
+	public void setTransFrom(String transFrom) {
+		this.transFrom = transFrom;
+	}
+	public String getTransTo() {
+		return transTo;
+	}
+	public void setTransTo(String transTo) {
+		this.transTo = transTo;
+	}
+	public double getTransClosingBalance() {
+		return transClosingBalance;
+	}
+	public void setTransClosingBalance(double transClosingBalance) {
+		this.transClosingBalance = transClosingBalance;
+	}
+	
+	*/
+	@Override
+	public String toString()
+	{
+		return transId +" "+trasAccountId;
+	}
+	
+
+}
