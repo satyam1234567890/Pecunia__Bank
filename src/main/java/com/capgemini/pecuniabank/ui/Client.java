@@ -8,6 +8,7 @@ import com.capgemini.pecuniabank.exception.UserDefineException;
 import com.capgemini.pecuniabank.service.ChequeService;
 import com.capgemini.pecuniabank.service.ChequeServiceImp;
 
+
 public class Client {
 	
 	public static void main(String ar[])
@@ -16,7 +17,7 @@ public class Client {
 		 Logger logger
          = Logger.getLogger( 
              Client.class.getName()); 
-		 
+		  
 		String employeeID;
 		String password;
 		
@@ -34,15 +35,21 @@ public class Client {
 		
 		if(employeeID.equals("satyamPUNB") && password.equals("PUNBsatyam"))
 		{
-		 do {
-			int option;
+			
+		
+		
+			char  option;
 			logger.info ("1. debit  using cheque");
 			logger.info ("2. credit using cheque");
-			logger.info ("enter your chooes : ");
-			option=sc.nextInt();
+			 do {
+					logger.info ("enter your chooes : ");
+					option= sc.next().charAt(0);
+					
+					 
+			// at the time of entering the data we assume that the employee enter the valid formated data.
 			switch(option)
 			{
-			case 1:
+			case '1':
 					{
 						logger.info ("enter accountID : ");
 						String accountID=sc.next();
@@ -93,7 +100,7 @@ public class Client {
 						
 					}
 				break;
-			case 2:
+			case '2':
 					{
 						logger.info ("enter accountID : "); //beneficiary account no
 						String accountID=sc.next();

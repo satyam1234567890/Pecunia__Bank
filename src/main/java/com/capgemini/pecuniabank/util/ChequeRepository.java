@@ -1,11 +1,12 @@
 package com.capgemini.pecuniabank.util;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.capgemini.pecuniabank.dto.Cheque;
 
 public class ChequeRepository {
-	static ArrayList <Cheque> chequedata=new ArrayList <Cheque>();
+	static List <Cheque> chequedata=new ArrayList <Cheque>();
 /*
 	public ArrayList<Cheque> getChequedata() {
 		return chequedata;

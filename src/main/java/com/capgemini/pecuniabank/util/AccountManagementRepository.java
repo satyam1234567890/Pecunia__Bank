@@ -2,11 +2,12 @@ package com.capgemini.pecuniabank.util;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.capgemini.pecuniabank.dto.AccountManagement;
 
 public class AccountManagementRepository {
-	 static ArrayList <AccountManagement> accountUsers=new ArrayList<AccountManagement>();
+	 static List <AccountManagement> accountUsers=new ArrayList<AccountManagement>();
 	 String accountStatus="Active";
 	 String IFSC="PUNBO33950";
 	 String accountType="current";
@@ -21,7 +22,7 @@ public class AccountManagementRepository {
 		accountUsers.add(new AccountManagement( "398714982911","Prabhjot8291",IFSC,accountType,"Closed",0.00,0.00,LocalDate.of(2020,02,12)));
 	}
 	
-	public ArrayList <AccountManagement> getAccountList()
+	public List <AccountManagement> getAccountList()
 	{
 		return accountUsers;
 	}

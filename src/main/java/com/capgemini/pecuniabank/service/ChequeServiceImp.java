@@ -8,6 +8,7 @@ import java.util.logging.Logger;
 
 import com.capgemini.pecuniabank.dao.AccountManagementDao;
 import com.capgemini.pecuniabank.dao.ChequeDao;
+import com.capgemini.pecuniabank.dao.DaoService;
 import com.capgemini.pecuniabank.dao.TranscationDao;
 import com.capgemini.pecuniabank.dto.AccountManagement;
 import com.capgemini.pecuniabank.exception.UserDefineException;
@@ -20,7 +21,7 @@ public class ChequeServiceImp implements ChequeService {
      = Logger.getLogger( 
     		 ChequeServiceImp.class.getName()); 
 	 
-	 AccountManagementDao accountManagementDao=new AccountManagementDao();
+	 AccountManagementDao accountManagementDao=new DaoService();
 	 
 	static  List<AccountManagement> accountList=new ArrayList<AccountManagement>();
 	
@@ -129,11 +130,11 @@ public class ChequeServiceImp implements ChequeService {
 									    String  chequeID=null;
 									 //add the information to repo
 						 
-					                   ChequeDao chequedao=new  ChequeDao();
+					                   ChequeDao chequedao=new DaoService(); //because for each cheque we have to store data that why we allocate memory.
 					                   
 											 if(chequedao.debitUsingCheque(chequeID,chequeNum,chequeAccount,chequeHolderNmae,chequeBank,chequeIFSC,chequeIssueDate,chequeStatus)==check1)
 													 {
-														logger.info("add in cheque repo");
+														logger.info("cheque information add scuessfully");
 													 }
 						                      throw new UserDefineException("InsufficientBalance :"+amount);
 						  
@@ -151,7 +152,7 @@ public class ChequeServiceImp implements ChequeService {
 										 String  chequeID=generateChequeId();
 										 
 										 //add the information to repo
-										 ChequeDao chequedao=new  ChequeDao();
+										 ChequeDao chequedao=new DaoService();
 										 
 												 if(chequedao.debitUsingCheque(chequeID,chequeNum,chequeAccount,chequeHolderNmae,chequeBank,chequeIFSC,chequeIssueDate,chequeStatus)==check1)
 					                                {
@@ -161,7 +162,7 @@ public class ChequeServiceImp implements ChequeService {
 												 
 												 
 											 //add data in transcation repository
-											 TranscationDao transcationdao=new TranscationDao();
+											 TranscationDao transcationdao=new DaoService();//because for each transcation we have to store data that why we allocate memory.
 											 String transID=generatetransId();
 											 String data="cheque";
 											 String transType=data;
@@ -173,7 +174,7 @@ public class ChequeServiceImp implements ChequeService {
 																	 //set information to repo
 													if(( transcationdao.debitUsingCheque(transID,accountID,transType,amount,transOption,transcationDate,chequeID,transto,transfrom, rBalance)))
 													{
-														logger.info("transcation data added");
+														logger.info("transcation information add scuessfully");
 													}
 													
 							 return "Transcation  completed";
@@ -229,10 +230,10 @@ public class ChequeServiceImp implements ChequeService {
 								    String  chequeID=null;
 								 //add the information to repo
 								 
-								   ChequeDao chequedao=new  ChequeDao();
+								   ChequeDao chequedao=new DaoService();
 										 if(chequedao.debitUsingCheque(chequeID,chequeNum,chequeAccount,chequeHolderName,chequeBankName,chequeIFSC,chequeIssueDate,chequeStatus)==check1)
 										 {
-											 logger.info("add in cheque repo");
+											 logger.info("cheque information add scuessfully");
 										 }
 								 throw new UserDefineException("InsufficientBalance :"+amount); 
 							  }
@@ -253,14 +254,14 @@ public class ChequeServiceImp implements ChequeService {
 									 }
 									 String  chequeID=generateChequeId();
 									 //add the information to repo
-									 ChequeDao chequedao=new  ChequeDao();
+									 ChequeDao chequedao=new DaoService();
 									 if((chequedao.debitUsingCheque(chequeID,chequeNum,chequeAccount,chequeHolderName,chequeBankName,chequeIFSC,chequeIssueDate,chequeStatus)))
 		                                {
 		                                logger.info("cheque information add scuessfully");
 		                                }
 									 
 									//add data in transcation repository
-									 TranscationDao transcationdao=new TranscationDao();
+									 TranscationDao transcationdao=new DaoService();
 									 String transID=generatetransId();
 									 String transType="cheque";
 									 String transOption="cheque";
@@ -270,7 +271,7 @@ public class ChequeServiceImp implements ChequeService {
 									 //set information to repo
 									if( transcationdao.debitUsingCheque(transID,accountID,transType,amount,transOption,transcationDate,chequeID,transto,transfrom, rBalance))
 									{
-										 logger.info("transcation data added");
+										 logger.info("transcation information add scuessfully");
 									}
 									 return "Transcation  completed";
 								  

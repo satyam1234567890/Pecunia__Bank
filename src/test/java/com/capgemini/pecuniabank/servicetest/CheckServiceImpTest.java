@@ -14,7 +14,7 @@ import com.capgemini.pecuniabank.service.ValidateData;
 
 public class CheckServiceImpTest {
 	
-	ChequeService chequeservice=new ChequeServiceImp();
+	ChequeService chequeservice=new ChequeServiceImp(); 
 	
 	
 //debitCheque testing:-	
