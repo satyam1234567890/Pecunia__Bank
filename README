@@ -1,0 +1,31 @@
+In this the project there is no interaction of user the bank employee do all the things.
+Bank employee has given id and password to login wrriten in code as a comment.
+The data that bank employee enter is written in cheque .
+The cheque information saved in cheque repo.
+If cheque pass then the transcation record is store in transcation repo.
+first run the test case to check wethere the program is working or not.
+
+Sample data:-
+for debit using cheque:-
+AccountID:-"328287420931",
+Amount:- 5000.00,
+cheque IssueDate:- "2020,02,04",
+cheque Number:- "420931",
+cheque Account:-"328287420931",
+Bank name:- "pecuniabank"
+Account HolderName:- "Vishal2093",
+IFSC code:- "PUNBO33950",  
+cheque status:-"unknown";
+for credit using cheque:-
+AccountID:-"328287420931",
+Amount:- 5000.00,
+cheque IssueDate:- "2020,02,04",
+cheque Number:- "420931",
+cheque Account:-"243902118471", //payee
+Bank name:- "pecuniabank"
+Account HolderName:- "Vishal2093",
+IFSC code:- "PUNBO33950",  
+cheque status:-"unknown";
+					 
+					 
+					 
